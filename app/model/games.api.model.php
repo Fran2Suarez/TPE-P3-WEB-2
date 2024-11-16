@@ -26,9 +26,9 @@ class GamesApiModel{
         $game = $query->fetch(PDO:: FETCH_OBJ);
         return $game;
     }
-    public function addGame($title, $description, $image) { 
-        $query = $this->db->prepare('INSERT INTO games(title, description, image) VALUES (?, ?, ?)');
-        $query->execute([$title, $description, $image]);
+    public function addGame($title, $description, $image, $id_genre) { 
+        $query = $this->db->prepare('INSERT INTO games(title, description, image, id_genre) VALUES (?, ?, ?, ?)');
+        $query->execute([$title, $description, $image, $id_genre]);
     
         $id = $this->db->lastInsertId();
     
