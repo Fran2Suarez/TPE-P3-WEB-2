@@ -25,7 +25,3 @@ Es una pagina que brinda informacion de videojuegos.
 ****
 
 Endpoints:
-
-
-****
-![Diagrama](diagrama.png)
