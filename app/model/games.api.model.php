@@ -20,6 +20,12 @@ class GamesApiModel{
         $games = $query->fetchAll(PDO:: FETCH_OBJ);
         return $games;
     }
+    public function getGenres(){
+        $query = $this->db->prepare ('SELECT * FROM genre');
+        $query->execute();
+        $genre = $query->fetchAll(PDO:: FETCH_OBJ);
+        return $genre;
+    }
     public function getGameById($id){
         $query = $this->db->prepare ('SELECT * FROM games WHERE id = ?');
         $query->execute([$id]);
@@ -34,8 +40,8 @@ class GamesApiModel{
     
         return $id;
     }
-    public function editGame($title, $description, $image, $id){
-        $query = $this->db->prepare('UPDATE games SET title = ?,  description = ?, image = ? WHERE id = ?');
-        $query->execute([$title, $description, $image, $id]);
+    public function editGame($title, $description, $image, $id_genre, $id) {
+        $query = $this->db->prepare('UPDATE games SET title = ?,  description = ?, image = ? , id_genre = ? WHERE id = ?');
+        $query->execute([$title, $description, $image, $id_genre, $id]);
     }
 }
