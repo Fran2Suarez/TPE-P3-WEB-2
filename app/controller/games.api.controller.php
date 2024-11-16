@@ -29,15 +29,16 @@ class GamesApiController {
         return $this->view->response($game);
     }
     public function addGame($req, $res){
-        if (empty($req->body->title) || empty($req->body->description) || empty($req->body->image)){
+        if (empty($req->body->title) || empty($req->body->description) || empty($req->body->image) || empty($req->body->id_genre)){
             return $this->view->response("Error, falta completar datos", 404);
         }
 
         $title = $req->body->title;
         $description = $req->body->description;
         $image = $req->body->image;
+        $id_genre = $req->body->id_genre;
 
-        $id = $this->model->addGame($title, $description, $image);
+        $id = $this->model->addGame($title, $description, $image, $id_genre);
 
         if (!$id) {
             return $this->view->response("Error al agregar juego", 500);
