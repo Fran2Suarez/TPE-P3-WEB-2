@@ -42,6 +42,22 @@ Endpoints:
 
 ****
 
+- GET ORDER BY (title): Devuelve los juegos en base al titulo:
+```json
+[
+    {
+    "id": 14,
+    "title": "Counter-Strike 2",
+    "description": "Counter-Strike 2 es un videojuego de disparos táctico en primera persona multijugador de 2023 desarrollado y publicado por Valve. Es la quinta entrega principal de        la serie Counter-Strike.",
+    "id_genre": 12,
+    "image": "https://images.g2a.com/300x400/1x1x1/counter-strike-2-prime-status-upgrade-pc-steam-account-global-i10000016291002/5e4e63f76c084a838f11d085"
+  },
+...
+]
+```
+
+****
+
 - GET BY ID: Devuelve un juego especifico por su id:
 ```json
 [
